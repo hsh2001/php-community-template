@@ -45,16 +45,16 @@ $topic = $result->fetch_object();
     <h2>
       제목:
       <?php
-        echo $topic->title;
+        echo htmlspecialchars($topic->title);
        ?>
     </h2>
     <p>
-      작성자: <?php echo $topic->author; ?>
+      작성자: <?php echo htmlspecialchars($topic->author); ?>
     </p>
     <p>
       본문:
       <?php
-        echo $topic->description;
+        echo htmlspecialchars($topic->description);
       ?>
     </p>
     <a href="/">메인 화면으로</a>

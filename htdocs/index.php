@@ -11,7 +11,9 @@ if ($user_id) {
   $result = $mysql->query($query);
 
   while ($topic = $result->fetch_object()) {
-    $topic_list .= "<p><a href=\"view.php?id=$topic->id\">$topic->title</a></p>";
+    $topic_list .= "<p><a href=\"view.php?id=$topic->id\">"
+                 . htmlspecialchars($topic->title)
+                 . "</a></p>";
   }
 }
 
